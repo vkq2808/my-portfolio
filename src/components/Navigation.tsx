@@ -1,9 +1,8 @@
-interface NavigationProps {
-  isMobileMenuOpen: boolean;
-  setIsMobileMenuOpen: (isOpen: boolean) => void;
-}
+'use client';
+import { useState } from 'react';
 
-export default function Navigation({ isMobileMenuOpen, setIsMobileMenuOpen }: NavigationProps) {
+export default function Navigation() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <nav className="fixed top-0 w-full backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-700 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

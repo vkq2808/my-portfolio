@@ -1,6 +1,3 @@
-'use client';
-
-import { useState } from "react";
 import Navigation from "../components/Navigation";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
@@ -11,14 +8,10 @@ import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 
 export default function Home() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
-      <Navigation
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
-      />
+      <Navigation />
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
