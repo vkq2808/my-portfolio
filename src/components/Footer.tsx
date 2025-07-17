@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="text-slate-600 dark:text-slate-300">
-            © 2025 Your Name. All rights reserved.
+            © 2025 Vũ Khánh Quốc. All rights reserved.
           </p>
         </div>
       </div>

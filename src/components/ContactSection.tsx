@@ -38,15 +38,15 @@ function SocialLink({ icon, href, label }: SocialLinkProps) {
 
 export default function ContactSection() {
   const contactInfo = [
-    { icon: "📧", label: "Email", value: "your.email@example.com" },
-    { icon: "📱", label: "Phone", value: "+1 (555) 123-4567" },
-    { icon: "📍", label: "Location", value: "Your City, Country" }
+    { icon: "📧", label: "Email", value: "vkq265@gmail.com" },
+    { icon: "📱", label: "Phone", value: "+84 919 309 031" },
+    { icon: "📍", label: "Location", value: "Ho Chi Minh City, Vietnam" }
   ];
 
   const socialLinks = [
-    { icon: "💼", href: "#", label: "LinkedIn" },
-    { icon: "🐱", href: "#", label: "GitHub" },
-    { icon: "🐦", href: "#", label: "Twitter" }
+    { icon: "💼", href: "https://www.linkedin.com/in/vkq265", label: "LinkedIn" },
+    { icon: "🐱", href: "https://github.com/vkq2808", label: "GitHub" },
+    // { icon: "🐦", href: "https://twitter.com/your-profile", label: "Twitter" }
   ];
 
   return (
