@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TechnologyTags from "./TechnologyTags";
 
 interface ExperienceItemProps {
   title: string;
@@ -7,9 +8,10 @@ interface ExperienceItemProps {
   description: string[];
   technologies: string[];
   image: string;
+  demoUrl?: string;
 }
 
-function ExperienceItem({ title, company, period, description, technologies, image }: ExperienceItemProps) {
+function ExperienceItem({ title, company, period, description, technologies, image, demoUrl }: ExperienceItemProps) {
   return (
     <div className="flex flex-row w-full bg-white dark:bg-slate-900 rounded-lg p-8 shadow-sm">
       <div className="bg-white dark:bg-slate-900 p-8 w-full">
@@ -26,16 +28,17 @@ function ExperienceItem({ title, company, period, description, technologies, ima
             </p>
           ))}
         </div>
-        <div className="flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded text-sm"
+        {
+          demoUrl && (
+            <a
+              href={demoUrl}
+              className="text-red-600 dark:red-blue-400 hover:underline text-lg mb-4 inline-block"
             >
-              {tech}
-            </span>
-          ))}
-        </div>
+              View Demo
+            </a>
+          )
+        }
+        <TechnologyTags technologies={technologies} />
       </div>
       <div className="flex flex-col min-w-40">
         <div className="text-slate-500 dark:text-slate-400 mt-2 md:mt-0">{period}</div>
@@ -66,7 +69,7 @@ export default function ExperienceSection() {
         "• Built reusable modules and made significant contributions to the overall system design."
       ],
       technologies: ["Angular", "Typescript"],
-      image: "/hcmute.png"
+      image: "/hcmute.png",
     },
     {
       title: "Freelance Fullstack Developer",
@@ -79,7 +82,8 @@ export default function ExperienceSection() {
         "Focused on performance optimization and modern development practices."
       ],
       technologies: ["JavaScript", "React.js", "Tailwind CSS", "Express.js", "MySQL", "Redux"],
-      image: "/gara-ute.png"
+      image: "/gara-ute.png",
+      demoUrl: "https://car-accessories-eccomerce.vercel.app/",
     }
   ];
 
@@ -93,13 +97,14 @@ export default function ExperienceSection() {
         <div className="space-y-12 w-full">
           {experiences.map((exp, index) => (
             <ExperienceItem
-              key={index}
+              key={exp.title + index}
               title={exp.title}
               company={exp.company}
               period={exp.period}
               description={exp.description}
               technologies={exp.technologies}
               image={exp.image}
+              demoUrl={exp.demoUrl}
             />
           ))}
         </div>
